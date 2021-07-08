@@ -1,0 +1,48 @@
+#d1{
+    background-image: url("https://jolly-kalam-23776e.netlify.app/mytunes/img/showcase.jpeg");
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    color: whitesmoke;
+}
+.dotLine{
+    color:#C70039;
+    font-weight: 1000;
+}
+h6{
+    color: whitesmoke;
+    font-size: large;
+    line-height: 40px;
+    
+}
+i{
+    color:#C70039;
+    padding: 10px;
+}
+i:hover{
+    color: #900C3F;
+}
+
+img {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.form-group {
+    color:whitesmoke;
+    font-weight: bold;
+    color: #C70039;
+}
+
+button {
+    background-color: #C70039;
+    color:whitesmoke;
+    font-weight: bold;
+    margin-top: 14.5px;
+}
+
+button:hover {
+    color:black;
+}

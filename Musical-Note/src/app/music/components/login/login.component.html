@@ -1,0 +1,67 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <br>
+                <img src="../assets/music1.jpg" width="100%" height="75%">
+                <h5 style="text-align: center; color:#C70039">Music is Love</h5>
+                <h5 style="text-align: center; color:#C70039">in search of a word ....</h5>
+            </div>
+            <div class="col-md-6">
+                <form [formGroup]="loginForm" (ngSubmit)="getCredentials()">
+                    <br>
+                    <br>
+                <fieldset>
+                    <i class="fas fa-5x fa-music" ></i>
+                    <br>
+                    <br>
+                    <h1 style="text-align: center;color:#C70039;">User Login</h1>
+                    <div class="form-group">
+                        <label>User Name
+                            <span class="mandatory"> *</span>
+                        </label>
+                        <input type="text"
+                               name="username"
+                               id="un"
+                               class="form-control"
+                               formControlName="username"
+                               autocomplete="off"
+                               [class.border-danger]="loginForm.get('username').invalid && (loginForm.get('username').dirty || loginForm.get('username').touched || isFormSubmitted)">
+                               <div *ngFor="let validation of validationMessages.username">
+                                <small class="text-danger error" *ngIf="loginForm.get('username').hasError(validation.type) && (loginForm.get('username').dirty || loginForm.get('username').touched || isFormSubmitted)">
+                                         {{validation.message}}
+                                </small>
+                                </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password
+                            <span class="mandatory"> *</span>
+                        </label>
+                        <input type="password"
+                               name="password"
+                               id="pwd"
+                               class="form-control"
+                               formControlName="password"
+                               autocomplete="off"
+                               [class.border-danger]="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched || isFormSubmitted)">
+                               <div *ngFor="let validation of validationMessages.password">
+                                <small class="text-danger error" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched || isFormSubmitted)">
+                                         {{validation.message}}
+                                </small>
+                                </div>
+                    </div>
+                    <button class="btn d-block mx-auto mt-3"
+                            type="submit"
+                            value="submit">Login
+                    </button>
+                </fieldset>
+            </form>
+            </div>
+            <div class="col-sm-1">
+                <p class="otherApps"> Sign In With </p>
+                <img class="otherIcons" src="../../../../assets/google-icon.png" height="45px" (click)="googleAuth()">
+                <img class="otherIcons" src="../../../../assets/facebook-icon.png" height="50px" (click)="facebookAuth()">
+            </div>
+        </div>
+    </div>
+</body>

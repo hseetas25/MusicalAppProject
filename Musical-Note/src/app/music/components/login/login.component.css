@@ -1,0 +1,56 @@
+body {
+    background-color: black;
+}
+
+.form-group {
+    color:whitesmoke;
+    font-weight: bold;
+    color: #C70039;
+}
+
+button {
+    background-color: #C70039;
+    color:whitesmoke;
+    font-weight: bold;
+}
+
+button:hover {
+    color:black;
+}
+
+legend {
+    color:whitesmoke;
+    font-weight: bold;
+}
+
+.mandatory {
+    color:white;
+}
+
+.fas {
+    color:#C70039;
+    margin-left:220px;
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+.error {
+    position: absolute;
+    font-size: 10px;
+}
+
+.otherApps {
+    font-size: 14px;
+    margin-top:185px;
+    color: #C70039;
+    font-weight: bold;
+    text-align: center;
+}
+
+.otherIcons {
+    margin-bottom: 20px;
+    margin-left: 12px;
+    cursor: pointer;
+}

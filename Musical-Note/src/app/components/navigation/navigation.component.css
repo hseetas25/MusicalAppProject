@@ -1,0 +1,41 @@
+i:hover{
+    color: #C70039;
+    border: white 3px solid;
+    border-radius: 25px;
+}
+i
+{
+    border: #C70039 3px solid;
+    border-radius: 30px;
+}
+.active
+{
+    background-color:#C70039;
+    padding:5px;
+    border: white 3px solid;
+    border-radius: 5px;
+}
+.nav-link:hover
+{
+    background-color:#C70039;
+    padding:5px;
+    border: white 3px solid;
+    border-radius: 5px;   
+}
+.navbar
+{
+    background-color: black;
+}
+.nav-link
+{
+    color:white;
+}
+.company
+{
+    color: #C70039;
+    font-size: 25px;
+}
+.company:hover
+{
+    color:white;
+}

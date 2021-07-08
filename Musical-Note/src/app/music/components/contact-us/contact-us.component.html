@@ -1,0 +1,76 @@
+<div id="d1" class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mt-5">
+                <h1>Innovation happens best when.....</h1>
+                <h1>.....we’re all in!</h1>
+                <h1 class="dotLine">-------------</h1>
+                <h6 class="mb-5">Start a journey with us. Reinvent who you are. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+                <img src="../../../../assets/google-icon.png" height="45px">
+                <img src="../../../../assets/facebook-icon.png" height="50px">
+                <img src="../../../../assets/instagram-icon.png" height="65px">
+                <img src="../../../../assets/twitter-icon.png" height="50px">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div>
+                    <form [formGroup]="contactUsForm">
+                        <div class="form-group">
+                            <label>Name 
+                                <span class="mandatory"> *</span>
+                            </label>
+                            <input type="text"
+                                   name="name"
+                                   class="form-control"
+                                   formControlName="name"
+                                   autocomplete="off"
+                                   [class.border-danger]="contactUsForm.get('name').invalid && (contactUsForm.get('name').dirty || contactUsForm.get('name').touched || isFormSubmitted)"/>
+                                   <div *ngFor="let validation of validationMessages.name">
+                                       <small class="text-danger error" *ngIf="contactUsForm.get('name').hasError(validation.type) && (contactUsForm.get('name').dirty || contactUsForm.get('name').touched || isFormSubmitted)">
+                                                {{validation.message}}
+                                       </small>
+                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email
+                                <span class="mandatory"> *</span>
+                            </label>
+                            <input type="email"
+                                   name="Email"
+                                   class="form-control"
+                                   formControlName="mail"
+                                   autocomplete="off"
+                                   [class.border-danger]="contactUsForm.get('mail').invalid && (contactUsForm.get('mail').dirty || contactUsForm.get('mail').touched || isFormSubmitted)"/>
+                                   <div *ngFor="let validation of validationMessages.mail">
+                                       <small class="text-danger error" *ngIf="contactUsForm.get('mail').hasError(validation.type) && (contactUsForm.get('mail').dirty || contactUsForm.get('mail').touched || isFormSubmitted)">
+                                                {{validation.message}}
+                                       </small>
+                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Issue / Comment
+                                <span class="mandatory"> *</span>
+                            </label>
+                            <textarea type="text"
+                                   name="comment"
+                                   class="form-control"
+                                   formControlName="comment"
+                                   autocomplete="off"
+                                   [class.border-danger]="contactUsForm.get('comment').invalid && (contactUsForm.get('comment').dirty || contactUsForm.get('comment').touched || isFormSubmitted)"></textarea>
+                                   <div *ngFor="let validation of validationMessages.comment">
+                                       <small class="text-danger error" *ngIf="contactUsForm.get('comment').hasError(validation.type) && (contactUsForm.get('comment').dirty || contactUsForm.get('comment').touched || isFormSubmitted)">
+                                                {{validation.message}}
+                                       </small>
+                                    </div>
+                        </div>
+                        <button class="btn  d-block mx-auto mb-5 "
+                                type="submit"
+                                value="submit"
+                                (click)="commentData()">Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

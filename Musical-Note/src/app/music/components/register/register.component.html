@@ -1,0 +1,143 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <br>
+                <img src="../assets/music.jpg" width="100%" height="75%">
+                <h5 style="text-align: center; color:#C70039">When words fail</h5>
+                <h5 style="text-align: center; color:#C70039">Music speaks....</h5>
+            </div>
+            <div class="col-sm-6">
+                <form [formGroup]="registerForm" (ngSubmit)="getUserData()" >
+                    <fieldset>
+                        <div class="flexContent" >
+                            <div class="form-group">
+                                <label>First Name 
+                                    <span class="mandatory"> *</span>
+                                </label>
+                                <input type="text"
+                                       name="firstname"
+                                       id="fn"
+                                       class="form-control"
+                                       formControlName="fname"
+                                       autocomplete="off"
+                                       style="padding-right: 50px;"
+                                       [class.border-danger]="registerForm.get('fname').invalid && (registerForm.get('fname').dirty || registerForm.get('fname').touched || isFormSubmitted)"/>
+                                       <div *ngFor="let validation of validationMessages.fname">
+                                           <small class="text-danger error" *ngIf="registerForm.get('fname').hasError(validation.type) && (registerForm.get('fname').dirty || registerForm.get('fname').touched || isFormSubmitted)">
+                                                    {{validation.message}}
+                                           </small>
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="margin-left:50px">
+                                    Last Name
+                                </label>
+                                <input type="text"
+                                       name="lastname"
+                                       id="ln"
+                                       class="form-control"
+                                       formControlName="lname"
+                                       autocomplete="off"
+                                       style="margin-left:50px">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="margin-right:30px">
+                                Date Of Birth
+                            </label>
+                            <input type="date"
+                                   name="dateofbirth"
+                                   id="dob"
+                                   class="form-control"
+                                   autocomplete="off"
+                                   formControlName="dob">
+                        </div>
+                        <div class="form-group">
+                            <label>Email
+                                <span class="mandatory"> *</span>
+                            </label>
+                            <input type="email"
+                                   name="email"
+                                   id="mail"
+                                   class="form-control"
+                                   autocomplete="off"
+                                   formControlName="mail"
+                                   [class.border-danger]="registerForm.get('mail').invalid && (registerForm.get('mail').dirty || registerForm.get('mail').touched || isFormSubmitted)">
+                                   <div *ngFor="let validation of validationMessages.mail">
+                                    <small class="text-danger error" *ngIf="registerForm.get('mail').hasError(validation.type) && (registerForm.get('mail').dirty || registerForm.get('mail').touched || isFormSubmitted)">
+                                             {{validation.message}}
+                                    </small>
+                                 </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number
+                                <span class="mandatory"> *</span>
+                            </label>
+                            <input type="number"
+                                   name="username"
+                                   id="un"
+                                   class="form-control"
+                                   autocomplete="off"
+                                   formControlName="username"
+                                   [class.border-danger]="registerForm.get('username').invalid && (registerForm.get('username').dirty || registerForm.get('username').touched || isFormSubmitted)">
+                                   <div *ngFor="let validation of validationMessages.username">
+                                    <small class="text-danger error" *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty || registerForm.get('username').touched || isFormSubmitted)">
+                                             {{validation.message}}
+                                    </small>
+                                 </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Password
+                                <span class="mandatory"> *</span>
+                            </label>
+                            <input type="password" 
+                                   name="password"
+                                   id="pwd"
+                                   class="form-control"
+                                   autocomplete="off"
+                                   formControlName="password"
+                                   [class.border-danger]="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched || isFormSubmitted)">
+                                   <div *ngFor="let validation of validationMessages.password">
+                                    <small class="text-danger error" *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched || isFormSubmitted)">
+                                             {{validation.message}}
+                                    </small>
+                                 </div>
+                        </div>
+                        <input type="checkbox"
+                               id="1"
+                               formControlName="receiveMail"
+                               [ngClass]="{ 'is-invalid': isFormSubmitted && control.receiveMailerrors }">
+                        <label style="color:#C70039; margin-left: 20px; font-weight: bold;">
+                            Yes, I want to receive emails and notifications....
+                        </label>
+                        <span *ngIf="isFormSubmitted && control.receiveMail.errors">
+                            <small *ngIf="control.receiveMail.errors.required" class="text-danger error"> ( This field is mandatory )</small>
+                        </span>
+                        <br>
+                        <input type="checkbox"
+                               id="2"
+                               formControlName="acceptTerms"
+                               [ngClass]="{ 'is-invalid': isFormSubmitted && control.acceptTerms.errors }">
+                        <label style="color:#C70039; margin-left: 20px; font-weight: bold;">
+                            By creating an account you agree to our terms and conditions....
+                        </label>
+                        <span *ngIf="isFormSubmitted && control.acceptTerms.errors">
+                            <small *ngIf="control.acceptTerms.errors.required" class="text-danger error"> ( This field is mandatory )</small>
+                        </span>
+                        <br>
+                        <button class="btn  d-block mx-auto mb-5 "
+                                type="submit"
+                                value="submit">Register
+                        </button>
+                    </fieldset>
+                </form>
+                </div>
+                <div class="col-sm-1">
+                    <p class="otherApps"> Sign Up With </p>
+                    <img class="otherIcons" src="../../../../assets/google-icon.png" height="45px" (click)="googleAuth()">
+                    <img class="otherIcons" src="../../../../assets/facebook-icon.png" height="50px" (click)="facebookAuth()">
+                </div>
+        </div>
+    </div>
+</body>

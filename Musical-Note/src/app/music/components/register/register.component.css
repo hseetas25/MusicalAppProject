@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+    font-size: 12.5px;
+}
+
+.form-group {
+    color:whitesmoke;
+    font-weight: bold;
+    color: #C70039;
+}
+
+button {
+    background-color: #C70039;
+    color:whitesmoke;
+    font-weight: bold;
+    margin-top: 14.5px;
+}
+
+button:hover {
+    color:black;
+}
+
+.flexContent {
+    display: flex;
+}
+.mandatory {
+    color:white;
+}
+
+legend {
+    color:whitesmoke;
+    font-weight: bold;
+}
+
+.error {
+    position: absolute;
+}
+
+.fa-facebook {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left:5px;
+    color:#4267B2;
+}
+
+.fa-envelope-square {
+    cursor: pointer;
+    margin-left:10px;
+    margin-top: 30px;
+    color:#d11430;
+}
+
+.otherApps {
+    font-size: 14px;
+    margin-top:120px;
+    color: #C70039;
+    font-weight: bold;
+    text-align: center;
+}
+
+.otherIcons {
+    margin-bottom: 20px;
+    margin-left: 12px;
+    cursor: pointer;
+}
