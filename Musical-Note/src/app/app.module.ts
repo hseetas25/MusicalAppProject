@@ -21,7 +21,12 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     MusicModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot(
+      {
+        positionClass: 'toast-bottom-right',
+        closeButton: true
+      }
+    ),
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,

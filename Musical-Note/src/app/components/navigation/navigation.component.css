@@ -1,23 +1,23 @@
 i:hover{
-    color: #C70039;
+    color: #41B3A3;
     border: white 3px solid;
     border-radius: 25px;
 }
 i
 {
-    border: #C70039 3px solid;
+    border: #41B3A3 3px solid;
     border-radius: 30px;
 }
 .active
 {
-    background-color:#C70039;
+    background-color:#41B3A3;
     padding:5px;
     border: white 3px solid;
     border-radius: 5px;
 }
 .nav-link:hover
 {
-    background-color:#C70039;
+    background-color:#41B3A3;
     padding:5px;
     border: white 3px solid;
     border-radius: 5px;   
@@ -29,11 +29,13 @@ i
 .nav-link
 {
     color:white;
+    font-weight: bold;
 }
 .company
 {
-    color: #C70039;
+    color: #41B3A3;
     font-size: 25px;
+    font-family: cursive;
 }
 .company:hover
 {

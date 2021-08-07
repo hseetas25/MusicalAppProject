@@ -6,11 +6,11 @@ body {
 .form-group {
     color:whitesmoke;
     font-weight: bold;
-    color: #C70039;
+    color: #41B3A3;
 }
 
 button {
-    background-color: #C70039;
+    background-color: #41B3A3;
     color:whitesmoke;
     font-weight: bold;
     margin-top: 14.5px;
@@ -47,13 +47,13 @@ legend {
     cursor: pointer;
     margin-left:10px;
     margin-top: 30px;
-    color:#d11430;
+    color:#41B3A3;
 }
 
 .otherApps {
     font-size: 14px;
     margin-top:120px;
-    color: #C70039;
+    color: #41B3A3;
     font-weight: bold;
     text-align: center;
 }

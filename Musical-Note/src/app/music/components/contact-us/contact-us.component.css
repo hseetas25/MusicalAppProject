@@ -8,7 +8,7 @@ h1{
     color: whitesmoke;
 }
 .dotLine{
-    color:#C70039;
+    color:#41B3A3;
     font-weight: 1000;
 }
 h6{
@@ -18,11 +18,11 @@ h6{
     
 }
 i{
-    color:#C70039;
+    color:#41B3A3;
     padding: 10px;
 }
 i:hover{
-    color: #900C3F;
+    color: #41B3A3;
 }
 
 img {
@@ -33,11 +33,11 @@ img {
 .form-group {
     color:whitesmoke;
     font-weight: bold;
-    color: #C70039;
+    color: #41B3A3;
 }
 
 button {
-    background-color: #C70039;
+    background-color: #41B3A3;
     color:whitesmoke;
     font-weight: bold;
     margin-top: 14.5px;

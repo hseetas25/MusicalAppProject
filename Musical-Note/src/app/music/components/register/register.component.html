@@ -4,8 +4,8 @@
             <div class="col-sm-5">
                 <br>
                 <img src="../assets/music.jpg" width="100%" height="75%">
-                <h5 style="text-align: center; color:#C70039">When words fail</h5>
-                <h5 style="text-align: center; color:#C70039">Music speaks....</h5>
+                <h5 style="text-align: center; color:#41B3A3">When words fail</h5>
+                <h5 style="text-align: center; color:#41B3A3">Music speaks....</h5>
             </div>
             <div class="col-sm-6">
                 <form [formGroup]="registerForm" (ngSubmit)="getUserData()" >
@@ -24,7 +24,7 @@
                                        style="padding-right: 50px;"
                                        [class.border-danger]="registerForm.get('fname').invalid && (registerForm.get('fname').dirty || registerForm.get('fname').touched || isFormSubmitted)"/>
                                        <div *ngFor="let validation of validationMessages.fname">
-                                           <small class="text-danger error" *ngIf="registerForm.get('fname').hasError(validation.type) && (registerForm.get('fname').dirty || registerForm.get('fname').touched || isFormSubmitted)">
+                                           <small class="text-white error" *ngIf="registerForm.get('fname').hasError(validation.type) && (registerForm.get('fname').dirty || registerForm.get('fname').touched || isFormSubmitted)">
                                                     {{validation.message}}
                                            </small>
                                         </div>
@@ -65,7 +65,7 @@
                                    formControlName="mail"
                                    [class.border-danger]="registerForm.get('mail').invalid && (registerForm.get('mail').dirty || registerForm.get('mail').touched || isFormSubmitted)">
                                    <div *ngFor="let validation of validationMessages.mail">
-                                    <small class="text-danger error" *ngIf="registerForm.get('mail').hasError(validation.type) && (registerForm.get('mail').dirty || registerForm.get('mail').touched || isFormSubmitted)">
+                                    <small class="text-white error" *ngIf="registerForm.get('mail').hasError(validation.type) && (registerForm.get('mail').dirty || registerForm.get('mail').touched || isFormSubmitted)">
                                              {{validation.message}}
                                     </small>
                                  </div>
@@ -82,7 +82,7 @@
                                    formControlName="username"
                                    [class.border-danger]="registerForm.get('username').invalid && (registerForm.get('username').dirty || registerForm.get('username').touched || isFormSubmitted)">
                                    <div *ngFor="let validation of validationMessages.username">
-                                    <small class="text-danger error" *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty || registerForm.get('username').touched || isFormSubmitted)">
+                                    <small class="text-white error" *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty || registerForm.get('username').touched || isFormSubmitted)">
                                              {{validation.message}}
                                     </small>
                                  </div>
@@ -99,7 +99,7 @@
                                    formControlName="password"
                                    [class.border-danger]="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched || isFormSubmitted)">
                                    <div *ngFor="let validation of validationMessages.password">
-                                    <small class="text-danger error" *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched || isFormSubmitted)">
+                                    <small class="text-white error" *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched || isFormSubmitted)">
                                              {{validation.message}}
                                     </small>
                                  </div>
@@ -108,22 +108,22 @@
                                id="1"
                                formControlName="receiveMail"
                                [ngClass]="{ 'is-invalid': isFormSubmitted && control.receiveMailerrors }">
-                        <label style="color:#C70039; margin-left: 20px; font-weight: bold;">
+                        <label style="color:#41B3A3; margin-left: 20px; font-weight: bold;">
                             Yes, I want to receive emails and notifications....
                         </label>
                         <span *ngIf="isFormSubmitted && control.receiveMail.errors">
-                            <small *ngIf="control.receiveMail.errors.required" class="text-danger error"> ( This field is mandatory )</small>
+                            <small *ngIf="control.receiveMail.errors.required" class="text-white error"> ( This field is mandatory )</small>
                         </span>
                         <br>
                         <input type="checkbox"
                                id="2"
                                formControlName="acceptTerms"
                                [ngClass]="{ 'is-invalid': isFormSubmitted && control.acceptTerms.errors }">
-                        <label style="color:#C70039; margin-left: 20px; font-weight: bold;">
+                        <label style="color:#41B3A3; margin-left: 20px; font-weight: bold;">
                             By creating an account you agree to our terms and conditions....
                         </label>
                         <span *ngIf="isFormSubmitted && control.acceptTerms.errors">
-                            <small *ngIf="control.acceptTerms.errors.required" class="text-danger error"> ( This field is mandatory )</small>
+                            <small *ngIf="control.acceptTerms.errors.required" class="text-white error"> ( This field is mandatory )</small>
                         </span>
                         <br>
                         <button class="btn  d-block mx-auto mb-5 "

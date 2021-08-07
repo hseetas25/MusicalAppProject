@@ -5,11 +5,11 @@ body {
 .form-group {
     color:whitesmoke;
     font-weight: bold;
-    color: #C70039;
+    color: #41B3A3;
 }
 
 button {
-    background-color: #C70039;
+    background-color: #41B3A3;
     color:whitesmoke;
     font-weight: bold;
 }
@@ -28,7 +28,7 @@ legend {
 }
 
 .fas {
-    color:#C70039;
+    color:#41B3A3;
     margin-left:220px;
 }
 
@@ -44,7 +44,7 @@ img {
 .otherApps {
     font-size: 14px;
     margin-top:185px;
-    color: #C70039;
+    color: #41B3A3;
     font-weight: bold;
     text-align: center;
 }

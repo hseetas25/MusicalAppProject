@@ -28,12 +28,14 @@ export class RegisterComponent implements OnInit {
     ) { 
     this.isFormSubmitted = false;
     this.isRequestInProgress = false;
+    this.userExist = false;
   }
 
   actionCodeSettings = {
     url: 'http://localhost:4200/home',
     handleCodeInApp: true,
   };
+  userExist: boolean;
   registerForm: FormGroup;
   isFormSubmitted: boolean;
   isRequestInProgress: boolean;
@@ -86,15 +88,19 @@ export class RegisterComponent implements OnInit {
 
   getUserData(): void {
     this.isFormSubmitted = true;
-    if (this.registerForm.invalid) {
-      this.isFormSubmitted = false;
+    if (!this.registerForm.valid) {
       return;
     }
     if(this.registerForm.valid && !this.isRequestInProgress) {
       this.isRequestInProgress = true;
       this.registerForm.value.id = this.firestore.createId();
       this.musicalService.createUser(this.registerForm.value).subscribe((data) => {
-        console.log(data.isSuccessful, data.reason);
+        if (data.isSuccessful) {
+          this.toastr.success('Registered', 'Successfully');
+        } else {
+          this.isRequestInProgress = false;
+          this.toastr.error('Ocuured', 'Error');
+        }
       });
     }
   }
@@ -102,14 +108,24 @@ export class RegisterComponent implements OnInit {
   facebookAuth(): void {
     const facebookProvider = new firebase.auth.FacebookAuthProvider();
     this.authUser.signInWithPopup(facebookProvider).then((data)=>{
-      console.log(data.user);
     })
   }
 
   googleAuth(): void {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     this.authUser.signInWithPopup(googleProvider).then((data) => {
-      console.log(data.user);
+      const userData: any = {};
+      userData.name = data.user.displayName;
+      userData.mail = data.user.email;
+      userData.acceptTerms = true;
+      userData.receiveMail = true;
+      this.musicalService.createUser(userData).subscribe((data) => {
+        if (data.isSuccessful) {
+          this.toastr.success('Registered', 'Successfully');
+        } else {
+          this.toastr.error('Ocuured', 'Error');
+        }
+      })
     });
   }
 }
