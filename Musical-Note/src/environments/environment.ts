@@ -5,13 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyB7kT9R5gef9nqUBzzw1NCMRfhNQBFFUwI",
-    authDomain: "musical-note.firebaseapp.com",
-    projectId: "musical-note",
-    storageBucket: "musical-note.appspot.com",
-    messagingSenderId: "893330118914",
-    appId: "1:893330118914:web:2bd70ee9e69826fb478a1b",
-    measurementId: "G-9EPWQEBZDM"
+    
   },
 };
 
